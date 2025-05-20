@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EasyRag - Multimodal Chatbot with Graph Database
 
-## Getting Started
+A modern web application that combines the power of Large Language Models (LLMs) with graph databases to create an intelligent chatbot capable of processing and understanding various types of media content.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Multimodal Processing**: Handle text, images, audio, and video files
+- **Graph Database Integration**: Store and query relationships between documents using Neo4j
+- **Interactive Graph Visualization**: Visualize document relationships and connections
+- **Advanced Query Interface**: Run custom graph queries with example templates
+- **Real-time Chat Interface**: Modern UI for interacting with the chatbot
+- **Document Management**: Organize and search through uploaded documents
+- **Media Analysis**: Extract text from images and videos using Google Cloud Vision
+- **Audio Transcription**: Convert speech to text using OpenAI's Whisper API
+
+## Tech Stack
+
+- **Frontend**: Next.js 14, React, TailwindCSS
+- **Backend**: Next.js API Routes
+- **Database**: Neo4j Graph Database
+- **AI/ML**: OpenAI API, Google Cloud Vision API
+- **UI Components**: React Flow (for graph visualization)
+- **File Processing**: FFmpeg (for media processing)
+
+## Prerequisites
+
+- Node.js 18+ and npm
+- Neo4j Database
+- OpenAI API Key
+- Google Cloud Vision API credentials
+- FFmpeg installed on your system
+
+## Environment Variables
+
+Create a `.env.local` file in the root directory with the following variables:
+
+```env
+# Neo4j Configuration
+NEO4J_URI=bolt://localhost:7687
+NEO4J_USER=neo4j
+NEO4J_PASSWORD=your_password_here
+OPENAI_API_KEY=your_openai_api_key_here
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Install dependencies:
+```bash
+cd multimodal-chatbot
+npm install
+```
 
-## Learn More
+2. Start the development server:
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+multimodal-chatbot/
+├── src/
+│   ├── app/                    # Next.js app directory
+│   │   ├── api/               # API routes
+│   │   ├── graph/             # Graph visualization page
+│   │   ├── graph-query/       # Graph query interface
+│   │   └── page.tsx           # Main chat interface
+│   ├── components/            # React components
+│   ├── lib/                   # Utility functions and services
+│   └── types/                 # TypeScript type definitions
+├── public/                    # Static assets
+└── package.json              # Project dependencies
+```
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## API Endpoints
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `POST /api/chat`: Process chat messages and files
+- `POST /api/graph/query`: Execute graph queries
+- `GET /api/graph`: Fetch graph data for visualization
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- OpenAI for the Whisper API
+- Google Cloud for Vision API
+- Neo4j for the graph database
+- Next.js team for the amazing framework 
