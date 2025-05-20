@@ -94,3 +94,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Google Cloud for Vision API
 - Neo4j for the graph database
 - Next.js team for the amazing framework 
+
+## Demo
+
+[![Watch the demo](https://img.youtube.com/vi/2Ats7UmW1R0/0.jpg)](https://youtu.be/2Ats7UmW1R0)
